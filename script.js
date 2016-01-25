@@ -49,19 +49,6 @@ var album2 = {
   Price: '$10.00'
 };
 
-var productsList = [book1, book2, book3, album1, album2];
-
-for (var product in productsList) {
-  for (var key in product) {
-    if (key === 'Title') {
-      $('#book1').append('<p class="booktitle">' + product[key] + '</p>');
-    } else if (key === 'Category') {
-    } else {
-        $('#book1').append('<p>' + product[key] + '</p>');
-    }
-  }
-}
-
 $(document).ready(function() {
   var showButton = $('#showButton');
   var hideButton = $('#hideButton');
@@ -70,13 +57,13 @@ $(document).ready(function() {
   showButton.hide();
 
   showButton.click(function() {
-    productsList.show();
+    productsList.show("slow");
     hideButton.show();
     showButton.hide();
   });
 
   hideButton.click(function() {
-    productsList.hide();
+    productsList.hide("slow");
     showButton.show();
     hideButton.hide();
   });
